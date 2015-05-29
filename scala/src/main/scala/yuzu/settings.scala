@@ -70,14 +70,10 @@ val METADATA_PATH = "about"
 
 // Properties to use as facets
 val FACETS = Seq(
-Map("uri" -> "http://www.w3.org/2000/01/rdf-schema#label", "label" -> "Label", "list" -> true),
   Map("uri" -> "http://lemon-model.net/lemon#reference", "label" -> "Reference", "list" -> true),
-  Map("uri" -> "http://lemon-model.net/lemon#writtenRep", "label" -> "Written Representation", "list" -> true),
-  Map("uri" -> "http://lemon-model.net/lemon#LexicalEntry", "label" -> "Lexical Entry", "list" -> true),
-  Map("uri" -> "http://www.w3.org/2002/07/owl#Restriction", "label" -> "Restriction", "list" -> true),
-  Map("uri" -> "http://www.lexinfo.net/ontology/2.0/lexinfo#commonNoun", "label" -> "Noun", "list" -> true),
-  Map("uri" -> "http://www.lexinfo.net/ontology/2.0/lexinfo#adjective", "label" -> "Adjective", "list" -> true),
-  Map("uri" -> "http://www.lexinfo.net/ontology/2.0/lexinfo#verb", "label" -> "Verb", "list" -> true)
+  Map("uri" -> "http://lemon-model.net/lemon#writtenRep", "label" -> "Written Representation", "list" -> false),
+    Map("uri" -> "http://www.w3.org/2000/01/rdf-schema#label", "label" -> "Label", "list" -> false)
+
 )
 // Properties to use as labels
 val LABELS = Set(
