@@ -6,7 +6,7 @@ object YuzuSettings {
 // The location where this server is to be deployed to
 // Only URIs in the dump that start with this address will be published
 // Should end with a trailing /
-val BASE_NAME = "http://dblexipedia.org/"
+val BASE_NAME = "http://localhost:8080/"
 // The prefix that this servlet will be deployed, e.g.
 // if the servlet is at http://www.example.org/yuzu/ the context
 // is /yuzu
@@ -70,13 +70,16 @@ val METADATA_PATH = "about"
 
 // Properties to use as facets
 val FACETS = Seq(
-  Map("uri" -> "http://lemon-model.net/lemon#reference", "label" -> "Reference", "list" -> true),
-  Map("uri" -> "http://lemon-model.net/lemon#writtenRep", "label" -> "Written Representation", "list" -> false),
-    Map("uri" -> "http://www.w3.org/2000/01/rdf-schema#label", "label" -> "Label", "list" -> false),
+Map("uri" -> "http://lemon-model.net/lemon#reference", "label" -> "Reference", "list" -> true),
+Map("uri" -> "http://lemon-model.net/lemon#writtenRep", "label" -> "Written Representation", "list" -> false),
+Map("uri" -> "http://www.w3.org/2000/01/rdf-schema#label", "label" -> "Label", "list" -> false),
 Map("uri" -> "http://www.w3.org/2002/07/owl#hasValue", "label" -> "hasValue (Restriction)", "list" -> true),
 Map("uri" -> "http://www.w3.org/2002/07/owl#onProperty", "label" -> "hasProperty (Restriction)", "list" -> true),
 Map("uri" -> "http://www.w3.org/2002/07/owl#sameAs", "label" -> "sameAs", "list" -> true),
-Map("uri" -> "http://www.lexinfo.net/ontology/2.0/lexinfo#partOfSpeech", "label" -> "partOfSpeech", "list" -> true)
+Map("uri" -> "http://www.lexinfo.net/ontology/2.0/lexinfo#partOfSpeech", "label" -> "partOfSpeech", "list" -> true),
+Map("uri" -> "http://www.w3.org/ns/prov#frequency", "label" -> "Frequency", "list" -> true),
+Map("uri" -> "http://lemon-model.net/lemon#language", "label" -> "Language", "list" -> true),
+Map("uri" -> "http://www.w3.org/ns/prov#pattern", "label" -> "Pattern", "list" -> true)
 )
 // Properties to use as labels
 val LABELS = Set(
