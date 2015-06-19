@@ -70,16 +70,16 @@ val METADATA_PATH = "about"
 
 // Properties to use as facets
 val FACETS = Seq(
-Map("uri" -> "http://lemon-model.net/lemon#reference", "label" -> "Reference", "list" -> true),
+Map("uri" -> "http://lemon-model.net/lemon#reference", "label" -> "Reference", "list" -> false),
 Map("uri" -> "http://lemon-model.net/lemon#writtenRep", "label" -> "Written Representation", "list" -> false),
-Map("uri" -> "http://www.w3.org/2000/01/rdf-schema#label", "label" -> "Label", "list" -> false),
-Map("uri" -> "http://www.w3.org/2002/07/owl#hasValue", "label" -> "hasValue (Restriction)", "list" -> true),
-Map("uri" -> "http://www.w3.org/2002/07/owl#onProperty", "label" -> "hasProperty (Restriction)", "list" -> true),
+Map("uri" -> "http://www.w3.org/2000/01/rdf-schema#label", "label" -> "Label", "list" -> true),
+Map("uri" -> "http://www.w3.org/2002/07/owl#hasValue", "label" -> "hasValue (Restriction)", "list" -> false),
+Map("uri" -> "http://www.w3.org/2002/07/owl#onProperty", "label" -> "hasProperty (Restriction)", "list" -> false),
 Map("uri" -> "http://www.w3.org/2002/07/owl#sameAs", "label" -> "sameAs", "list" -> true),
-Map("uri" -> "http://www.lexinfo.net/ontology/2.0/lexinfo#partOfSpeech", "label" -> "partOfSpeech", "list" -> true),
-Map("uri" -> "http://www.w3.org/ns/prov#frequency", "label" -> "Frequency", "list" -> true),
+Map("uri" -> "http://www.lexinfo.net/ontology/2.0/lexinfo#partOfSpeech", "label" -> "partOfSpeech", "list" -> false),
+Map("uri" -> "http://www.w3.org/ns/prov#frequency", "label" -> "Frequency", "list" -> false),
 Map("uri" -> "http://lemon-model.net/lemon#language", "label" -> "Language", "list" -> true),
-Map("uri" -> "http://www.w3.org/ns/prov#pattern", "label" -> "Pattern", "list" -> true)
+Map("uri" -> "http://www.w3.org/ns/prov#pattern", "label" -> "Pattern", "list" -> false)
 )
 // Properties to use as labels
 val LABELS = Set(
