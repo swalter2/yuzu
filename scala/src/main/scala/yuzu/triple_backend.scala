@@ -226,8 +226,12 @@ class TripleBackend(db : String) extends Backend {
     val keys = map.keys.toSeq.sortBy(map(_))
     val insertKey = sql"""INSERT OR IGNORE INTO ids (n3, main) VALUES (?, ?)""".
         insert2[String, String]
+    var i = 0
     for(key <- keys) {
-      insertKey(toN3(key), pageN3(toN3(key))) }
+      insertKey(toN3(key), pageN3(toN3(key))) 
+      i += 1
+      if(i % 10000 == 0) { 
+        insertKey.execute }}
     insertKey.execute }
 
   def fromN3orInt(s : String) = if(s.startsWith("<") || s.startsWith("_") || 
@@ -382,6 +386,10 @@ class TripleBackend(db : String) extends Backend {
                 catch {
                   case x : Exception => // oh well 
                 }}}
+            else {
+              if(LABELS.contains("<" + prop.getURI() + ">") && !subj.getURI().contains('#') && obj.isLiteral()) {
+                updateLabel(obj.getLiteralLexicalForm(), sid) }}
+
 
             if(obj.isURI() && obj.getURI().startsWith(BASE_NAME) &&
                 !NO_INVERSE.contains(removeFrag(obj.getURI()))) {
@@ -424,7 +432,7 @@ class TripleBackend(db : String) extends Backend {
           WHERE head=1 GROUP BY oid""".execute
 
     sql"""INSERT INTO free_text
-          SELECT pid, sid, label FROM tripids
+          SELECT sid, pid, label FROM tripids
           JOIN ids on oid=id
           WHERE label != "" """.execute
 
